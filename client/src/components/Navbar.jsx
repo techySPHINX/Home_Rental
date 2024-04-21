@@ -2,16 +2,16 @@ import { IconButton } from "@mui/material";
 import { Search, Person, Menu } from "@mui/icons-material";
 import variables from "../styles/variables.scss";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import "../styles/Navbar.scss";
-import { Link, useNavigate } from "react-router-dom";
-import { setLogout } from "../redux/state";
+import {  useNavigate } from "react-router-dom";
+
 
 export const Navbar = () => {
   const [search, setSearch] = useState("");
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [dropdownMenu, setDropdownMenu] = useState(false);
 
   return (
@@ -70,3 +70,6 @@ export const Navbar = () => {
     </div>
   );
 };
+
+
+export default Navbar;
